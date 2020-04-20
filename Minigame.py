@@ -18,7 +18,7 @@ def Magic8Ball():
 def Replay():
     Magic8Ball()
 
-def Jokes():
+def randnum():
     for x in range(1):
         print("Your random number is:", random.randint(1,101))
 
@@ -45,6 +45,7 @@ def madlibs():
     pluralnoun4=input("type a plural noun: ")
     print()
     print("A vacation is when you take a trip to some", adjective1, "place with your", adjective2, "family.\nUsually you go to some place that is near a/an", noun1, "or up on a/an", noun2,".\nA good vacation place is one where you can ride", pluralnoun1, "or play", game,"or go hunting for",pluralnoun2,".\nI like to spend my time", verb1, "or", verb2,".\nWhen parents go on vacation, they spend their time eating three", pluralnoun3, "a day, and fathers play golf, and mothers sit around", verb3,".\nLast summer, my little brother fell in a/an", noun3, "and got poison", plant, "all over his", partofbody,".\nMy family is going to go to the", place, ", and I will practice" ,verb4,".\nParents need vacations more than kids because parents are always very", adjective3, "and because they have to work", number,"hours every day all year making enough", pluralnoun4, "to pay for the vacation.")
+
 
 def madlibs2():
     place1=input("type a place: ")
@@ -100,7 +101,7 @@ def madlibs3():
     print()
     print("When we first met, you looked", adjective1, "and", adjective2, ". I couldn't believe my", bodypart1, "You smelled like", noun1, "and walked as graceful as a", animal, ". I couldn't wait to", verb1, "to you. I", adverb1, "asked you if I could have your", noun2, ". I could see a look of", adjective3, "in your eyes. You hesitated for a moment, then gave me a", noun3,". I finally got to take you on our first date. I loved spending time with you. You could make me", verb2, "so easily, like no one had before. When you touched me, I felt", noun4, "up to my", bodypart2, ". When you looked at me, I could see", noun5, ". I knew we were meant to be together. After a", adverb2, "night. I was so", verb3, "to bring you home. I longed to", verb4, "you again. You looked at me and said", exclamation, "and I just knew. You", pastverb1, "me and I", pastverb2, "you. Here we are after all this time. It feels like it has been", number1, "years! I look forward to", number2, "more. You make me want to", verb5, "and I will", verb6, "you forever. Nobody else could", verb7, "me, like you do.", adverb3, "yours.")
 
-def start():
+def madlibs_start():
     print ("Pick a story")
     print()
     print ("Funny vacation story: press 1")
@@ -119,7 +120,7 @@ def start():
 win_condition = ["Try again!", "You won!"]
 options = {"scissors":"rock","paper":"scissors","rock":"paper"}
 score = 0
-def game():
+def RPS():
     global score
 
     valid = False
@@ -142,40 +143,44 @@ def game():
     print("- "*10)
     print("Your score: " + str(score))
     print("- "*10)
-    game()
+    RPS()
 
-print("Do you wnat to play a game? (yes/no)")
-print()
-answer = input()
-if answer.lower() == "yes":
-    print("Choose 1 - Magic 8, 2 -  Random #, 3, 4!")
-    choice = input()
-    if choice == "1":
-        print('  __  __          _____ _____ _____    ___  ')
-        print(' |  \/  |   /\   / ____|_   _/ ____|  / _ \ ')
-        print(' | \  / |  /  \ | |  __  | || |      | (_) |')
-        print(' | |\/| | / /\ \| | |_ | | || |       > _ < ')
-        print(' | |  | |/ ____ \ |__| |_| || |____  | (_) |')
-        print(' |_|  |_/_/    \_\_____|_____\_____|  \___/ ')
-        print('')
-        print('')
-        print('')
-        print('Hello World, I am the Magic 8 Ball, What is your name?')
-        print()
-        name = input()
-        print('hello ' + name)
+def main_code():
+    print("Do you wnat to play a game? (yes/no)")
+    print()
+    answer = input()
+    if answer.lower() == "yes":
+        print("Choose 1: - Magic 8 | 2 -  Random #  | 3 - MadLib | 4 - Rock, Paper, Scissors!")
 
-        Magic8Ball()
-    elif choice == "2":
-        print("")
-        Jokes()
-    elif choice == "3":
-        start()
-    elif choice == "4":
-        game()
+        choice = input()
+        if choice == "1":
+            print('  __  __          _____ _____ _____    ___  ')
+            print(' |  \/  |   /\   / ____|_   _/ ____|  / _ \ ')
+            print(' | \  / |  /  \ | |  __  | || |      | (_) |')
+            print(' | |\/| | / /\ \| | |_ | | || |       > _ < ')
+            print(' | |  | |/ ____ \ |__| |_| || |____  | (_) |')
+            print(' |_|  |_/_/    \_\_____|_____\_____|  \___/ ')
+            print('')
+            print('')
+            print('')
+            print('Hello World, I am the Magic 8 Ball, What is your name?')
+            print()
+            name = input()
+            print('hello ' + name)
+
+            Magic8Ball()
+        elif choice == "2":
+            print("")
+            randnum()
+        elif choice == "3":
+            madlibs_start()
+        elif choice == "4":
+            RPS()
+        else:
+            print("Enter vaild number")
+    elif answer.lower() == "no":
+        print("Okay")
     else:
-        print("Enter vaild number")
-elif answer.lower() == "no":
-    print("Okay")
-else:
-    print("Please enter yes or no.")
+        print("Please enter yes or no.")
+
+main_code()
