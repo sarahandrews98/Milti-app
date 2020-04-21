@@ -101,19 +101,37 @@ def madlibs3():
     print()
     print("When we first met, you looked", adjective1, "and", adjective2, ". I couldn't believe my", bodypart1, "You smelled like", noun1, "and walked as graceful as a", animal, ". I couldn't wait to", verb1, "to you. I", adverb1, "asked you if I could have your", noun2, ". I could see a look of", adjective3, "in your eyes. You hesitated for a moment, then gave me a", noun3,". I finally got to take you on our first date. I loved spending time with you. You could make me", verb2, "so easily, like no one had before. When you touched me, I felt", noun4, "up to my", bodypart2, ". When you looked at me, I could see", noun5, ". I knew we were meant to be together. After a", adverb2, "night. I was so", verb3, "to bring you home. I longed to", verb4, "you again. You looked at me and said", exclamation, "and I just knew. You", pastverb1, "me and I", pastverb2, "you. Here we are after all this time. It feels like it has been", number1, "years! I look forward to", number2, "more. You make me want to", verb5, "and I will", verb6, "you forever. Nobody else could", verb7, "me, like you do.", adverb3, "yours.")
 
+def madlib4():
+    item=input("Enter an object: ")
+    person=input("Enter a person: ")
+    activity1=input("Enter an activity: ")
+    state=input("Enter a state: ")
+    activity2=input("Enter an activity: ")
+    time=input("Enter a time: ")
+    name2=input("Enter a name: ")
+    name3=input("Enter a name: ")
+    name4=input("Enter a name: ")
+    number=input("Enter a number: ")
+    action=input("Entery an action: ")
+    print()
+    print("It is the year 2020. A new virus called Corona has taken over the", item,".", person, "has told you today is your last day of freedom. What will you do? You decide to go", activity1, "drive to", state, "and go", activity2, ". Fast forward....... it is", time, "o’clock. You last adventure for the day is dinner with" ,name2, name3, "and", name4, ". You all go to restaurant and order", number, "of everything on the menu! As the day come to an end you decide to take a risk and", action, "a puppy! *Gasp* Well hopefully you enjoyed your freedom!")
+
 def madlibs_start():
     print ("Pick a story")
     print()
     print ("Funny vacation story: press 1")
     print ("Worst bedtime story: press 2")
     print ("Love story: press 3 ")
+    print("Conrona: press 4 ")
     story = input('story: ')
     if story == '1': 
         madlibs()
     elif story == '2':    
         madlibs2()
     elif story=='3':
-        madlibs3()    
+        madlibs3() 
+    elif story=='4':
+        madlib4()     
     else:
         exit()
 
