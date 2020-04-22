@@ -21,6 +21,7 @@ def Replay():
 def randnum():
     for x in range(1):
         print("Your random number is:", random.randint(1,101))
+    restart()
 
 
 def madlibs():
@@ -133,7 +134,7 @@ def madlibs_start():
     elif story=='4':
         madlib4()     
     else:
-        exit()
+        restart()
 
 win_condition = ["Try again!", "You won!"]
 options = {"scissors":"rock","paper":"scissors","rock":"paper"}
@@ -163,12 +164,22 @@ def RPS():
     print("- "*10)
     RPS()
 
+def restart():
+    print("Want to play another game? (yes/no)")
+    print()
+    answer = input()
+    if answer.lower() == "yes":
+        main_code()
+    else:
+        quit
+    
+
 def main_code():
     print("Do you wnat to play a game? (yes/no)")
     print()
     answer = input()
     if answer.lower() == "yes":
-        print("Choose 1: - Magic 8 | 2 -  Random #  | 3 - MadLib | 4 - Rock, Paper, Scissors!")
+        print("Choose 1: - Magic 8 | 2 -  Random #  | 3 - MadLib | 4 - Rock, Paper, Scissors! | q - quit")
 
         choice = input()
         if choice == "1":
@@ -194,6 +205,8 @@ def main_code():
             madlibs_start()
         elif choice == "4":
             RPS()
+        elif choice == "q":
+            exit()
         else:
             print("Enter vaild number")
     elif answer.lower() == "no":
