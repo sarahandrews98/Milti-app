@@ -3,7 +3,7 @@ As our current circumstances I have found myself bored looking for things to do 
 
 Magic 8 Ball from: https://github.com/viljow/magic8/blob/master/main.py 
 
-Rock, Paper, Scisors from: https://github.com/ksu-is/Rock-Paper-Scissors
+Rock, Paper, Scisors from: https://github.com/juanmartin86/RockPaperScissors/blob/master/rockpaperscissors.py 
 
 Madlib Story from: https://github.com/ksu-is/MadLib_Fun
 
