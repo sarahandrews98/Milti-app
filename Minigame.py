@@ -80,7 +80,7 @@ def madlibs_start():
         madlibs2()
     elif story=='3':
         madlibs3() 
-    elif story == 'q' 
+    elif story == 'q':
         clrscr()
         restart()
     else:
