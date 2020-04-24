@@ -1,4 +1,5 @@
 import random
+import os
 import sys
 from time import *
 
@@ -17,19 +18,6 @@ def Magic8Ball():
     
 def Replay():
     Magic8Ball()
-
-def randnum():
-    for x in range(1):
-        print("Your random number is:", random.randint(1,101))
-        print("Want to play another game? (yes/no)")
-        print()
-        answer = input()
-        if answer.lower() == "yes":
-            restart()
-        else:
-            print()
-            randnum()
-
 
 def madlibs():
     adjective1=input("type an adjective: ")
@@ -57,64 +45,11 @@ def madlibs():
     restart()
 
 def madlibs2():
-    place1=input("type a place: ")
-    adjective1=input("type an adjective: ")
-    femalecel=input("type a female celebrity: ")
-    bodypart1=input("type a body part: ")
-    bodypart2=input("type a body part: ")
-    organ=input("type a human organ: ")
-    adjective2=input("type an adjective: ")
-    malecel=input("type a male celebrity: ")
-    adjective3=input("type an adjective: ")
-    bodypart3=input("type a body part: ")
-    bodypart4=input("type a body part: ")
-    place2=input("type a place: ")
-    celebrity=input("type a celebrity: ")
-    animal=input("type an animal: ")
-    verb=input("type a verb: ")
-    number=input("type a number: ")
-    bodypart5=input("type a body part: ")
-    adjective4=input("type an adjective: ")
-    adjective5=input("type an adjective: ")
-    pastverb=input("type a past tense verb: ")
-    print()
-    print("Once upon a time, in a place called", place1, "there was a", adjective1, "princess named", femalecel, ". Her kindgom was huge, but her", bodypart1, "was bigger. She was beautiful from her", bodypart2, "to her", organ, ". One day she saw a", adjective2, "prince named", malecel, ". He had a", adjective3, "face. As soon as his", bodypart3, "touched her", bodypart4, "they fell in love. They got married at", place2,"the following day. Not long after, they had a baby. They decided to call him/her", celebrity, "He/she looked like a", animal, ". He/she used to", verb, number, "times a day so that his/her", bodypart5, "would be", adjective4, "and", adjective5, ". And they", pastverb, "happily ever after!")
-    print()
+   
     restart()
 
-def madlibs3():
-    adjective1=input("type an adjective: ")
-    adjective2=input("type an adjective: ")
-    bodypart1=input("type a body part: ")   
-    noun1=input("type a noun: ")
-    animal=input("type an animal: ")
-    verb1=input("type a verb: ")
-    adverb1=input("type an adverb: ")
-    noun2=input("type a noun: ")
-    adjective3=input("type an adjective: ")
-    noun3=input("type a noun: ")
-    verb2=input("type a verb: ")
-    noun4=input("type a noun: ")
-    bodypart2=input("type a body part: ")
-    noun5=input("type a noun: ")
-    adverb2=input("type an adverb: ")
-    verb3=input("type a verb: ")
-    verb4=input("type a verb: ")
-    exclamation=input("type an exclamation: ")
-    pastverb1=input("type a past tense verb: ")
-    pastverb2=input("type a past tense verb: ")
-    number1=input("type a number: ")
-    number2=input("type a number: ")
-    verb5=input("type a verb: ")
-    verb6=input("type a verb: ")
-    verb7=input("type a verb: ")
-    adverb3=input("type an adverb: ")
-    print()
-    print("When we first met, you looked", adjective1, "and", adjective2, ". I couldn't believe my", bodypart1, "You smelled like", noun1, "and walked as graceful as a", animal, ". I couldn't wait to", verb1, "to you. I", adverb1, "asked you if I could have your", noun2, ". I could see a look of", adjective3, "in your eyes. You hesitated for a moment, then gave me a", noun3,". I finally got to take you on our first date. I loved spending time with you. You could make me", verb2, "so easily, like no one had before. When you touched me, I felt", noun4, "up to my", bodypart2, ". When you looked at me, I could see", noun5, ". I knew we were meant to be together. After a", adverb2, "night. I was so", verb3, "to bring you home. I longed to", verb4, "you again. You looked at me and said", exclamation, "and I just knew. You", pastverb1, "me and I", pastverb2, "you. Here we are after all this time. It feels like it has been", number1, "years! I look forward to", number2, "more. You make me want to", verb5, "and I will", verb6, "you forever. Nobody else could", verb7, "me, like you do.", adverb3, "yours.")
-    print()
-    restart()
 
-def madlib4():
+def madlib3():
     item=input("Enter an object: ")
     person=input("Enter a person: ")
     activity1=input("Enter an activity: ")
@@ -136,8 +71,8 @@ def madlibs_start():
     print()
     print ("Funny vacation story: press 1")
     print ("Worst bedtime story: press 2")
-    print ("Love story: press 3 ")
     print("Conrona: press 4 ")
+    print("Quit: press q")
     story = input('story: ')
     if story == '1': 
         madlibs()
@@ -145,53 +80,179 @@ def madlibs_start():
         madlibs2()
     elif story=='3':
         madlibs3() 
-    elif story=='4':
-        madlib4()     
-    else:
+    elif story == 'q' 
+        clrscr()
         restart()
-
-win_condition = ["Try again!", "You won!"]
-options = {"scissors":"rock","paper":"scissors","rock":"paper"}
-score = 0
-def RPS():
-    global score
-
-    valid = False
-    while valid is False:
-        do = input("Rock, paper or scissors: ")
-        valid = do in options
-
-    cpu = random.choice(list(options))
-    same = cpu == do
-    won = options[cpu] == do
-    score += int(won)
-
-    if same:
-        print("You both chose: " + do + "!")
     else:
-        print("You chose: " + do + "!")
-        print("Your opponent chose: " + cpu + "!")
+        print("Pick a number or q to quit.")
 
-    print(win_condition[int(won)])
-    print("- "*10)
-    print("Your score: " + str(score))
-    print("- "*10)
-    RPS()
+#  classic game - Rock, Paper, Scissors
+#  tuples list of win combinations
+WIN_LIST_RPS = [('ROCK', 'SCISSORS'),  # who can be defeated by ROCK
+                ('SCISSORS', 'PAPER'),  # who can be defeated by SCISSORS
+                ('PAPER', 'ROCK')]  # who can be defeated by PAPER
+
+SELECTIONS_LIST_RPS = ['ROCK', 'PAPER', 'SCISSORS']
+
+#  an expansion of classic game - Rock, Paper, Scissors, Lizard, Spock
+#  tuples list of win combinations
+WIN_LIST_RPSLS = [('ROCK', 'SCISSORS'), ('ROCK', 'LIZARD'),  # who can be defeated by ROCK
+                  ('SCISSORS', 'LIZARD'), ('SCISSORS', 'PAPER'),  # who can be defeated by SCISSORS
+                  ('LIZARD', 'PAPER'), ('LIZARD', 'SPOCK'),  # who can be defeated by LIZARD
+                  ('PAPER', 'SPOCK'), ('PAPER', 'ROCK'),  # who can be defeated by PAPER
+                  ('SPOCK', 'ROCK'), ('SPOCK', 'SCISSORS')]  # who can be defeated by SPOCK
+
+#  list of selections
+SELECTIONS_LIST_RPSLS = ['ROCK','PAPER','SCISSORS','LIZARD','SPOCK']
+
+#  dictionary that saves wins of both player and computer, and ties
+stats_count = {'player':0, 'computer':0, 'ties':0}
+
+def clrscr():
+  """ Clears the console in order to make a more pleasant game """
+  if os.name == "posix":  # compatible with Unix/Linux/MacOS/BSD/etc
+    os.system('clear')
+  elif os.name in ("nt", "dos", "ce"):  # compatible with DOS/Windows
+    os.system('CLS')
+
+def RPS():
+    """ Main menu """
+    clrscr()
+    while True:
+        option = input(
+        "-------------- Welcome to my Rock-Paper-Scissors based Games ------------------"
+        "\n  [1] - (Classic) Rock Paper Scissors                                          "
+        "\n  [2] - (Expansion) Rock Paper Scissors Lizard Spock                           "
+        "\n  [3] - Home                                                                   "                   
+        "\n-------------------------------------------------------------------------------"
+        "\n Please select an option (1, 2, or 3): ")
+        if option == '1' or option == '2' or option == '3':  #  if options 1, 2 or 3 are selected, it will call lets_play function
+            lets_play(option)
+        elif option == '4':  # if option is 4, exits the program
+            print("Bye bye")
+            exit()
+        else:  #  if there's an invalid option, the menu will start again
+            input("Invalid option. Try again... Please press ENTER to continue")
+            clrscr()
+    
+def lets_play(option):
+  """ A function that sets which game is going to be played based on the option selected """
+  clrscr()
+  
+  if option == '1':  #  if option 1 is selected, it will play Rock + Paper + Scissors game
+    intro = (" Welcome to Rock + Paper + Scissors game!")  
+    option_help = ("\n This game is simple and goes as following:"  
+          "\n *You can choose between: Rock, Paper or Scissors."
+          "\n\n You must take in consideration that:"
+          "\n *Rock crushers Scissors."
+          "\n *Scissors cut Paper."
+          "\n *Paper covers Rock."
+          "\n\n Notes: *The first one that scores 5 points WINS the game!"
+          "\n        *If you forgot the rules, just type 'help'."
+          "\n        *If you want to go to main menu to try the other games, just type 'quit'."
+          "\n        *If you want to exit because you're afraid of loosing, just type 'exit' you coward!\n")
+    selections_list = SELECTIONS_LIST_RPS  #  selections are assigned based on the game
+    win_list = WIN_LIST_RPS  #  win list is assigned based on the game
+  
+  elif option == '2':  #  if option 2 is selected, it will play Rock + Paper + Scissors + Lizard + Spock game
+    intro = (" Welcome to Rock + Paper + Scissors + Lizard + Spock game!")
+    option_help = ("\n This game is simple and goes as following:"
+          "\n *You can choose between: Rock, Paper, Scissors, Lizard or Spock."
+          "\n\n You must take in consideration that:"
+          "\n *Rock crushers Scissors and Lizard."
+          "\n *Scissors cut Paper and decapitate Lizard."
+          "\n *Lizard eats Paper and poisons Spock."
+          "\n *Paper disproves Spock and covers Rock."
+          "\n *Spock vaporizes Rock and smashes Scissors."
+          "\n\n Notes: *The first one that scores 5 points WINS the game!"
+          "\n        *If you forgot the rules, just type 'help'."
+          "\n        *If you want to go to main menu to try the other games, just type 'quit'."
+          "\n        *If you want to exit because you're afraid of loosing, just type 'exit' you coward!\n")
+    selections_list = SELECTIONS_LIST_RPSLS  #  selections are assigned based on the game
+    win_list = WIN_LIST_RPSLS  #  win list is assigned based on the game
+  
+  elif option == '3':  #  if option 3 is selected, it will play Google + Apple + Microsoft + Samsung + Amazon + Nintendo + Sony game
+    intro = (" Welcome to Google + Apple + Microsoft + Samsung + Amazon + Nintendo + Sony game!")
+    option_help = ("\n This game is simple and goes as following:"
+          "\n *You can choose between: Google, Apple, Microsoft, Samsung, Amazon, Nintendo or Sony."
+          "\n\n You must take in consideration these facts:"
+          "\n *Google's shares are higher than Apple, Microsoft and Samsung."
+          "\n *Apple sells more phones than Microsoft, Samsung and Amazon."
+          "\n *Microsoft can buy Samsung, Amazon and Nintendo."
+          "\n *Samsung pays more money in advertising than Amazon, Nintendo and Sony."
+          "\n *Amazon sells Nintendo, Sony and Google stuff on its website."
+          "\n *Nintendo is older than Sony, Google and Apple."
+          "\n *Sony has made better video game systems than Google, Apple and Microsoft."
+          "\n\n Notes: *The first one that scores 5 points WINS the game!"
+          "\n        *If you forgot the rules, just type 'help'."
+          "\n        *If you want to go to main menu to try the other games, just type 'quit'."
+          "\n        *If you want to exit because you're afraid of loosing, just type 'exit' you coward!\n")
+    selections_list = SELECTIONS_LIST_COMPANIES  #  selections are assigned based on the game
+    win_list = WIN_LIST_COMPANIES  #  win list is assigned based on the game
+      
+  print(intro)  #  displays the intro information based on the option selected
+  print(option_help)  # displays the help information based on the option selected
+    
+  while True:
+    player_selection = input("Your Selection {}: ".format(selections_list))
+    player_selection = player_selection.upper()
+    
+    if player_selection in selections_list:
+      clrscr()
+      computer_selection = random.choice(selections_list)
+      
+      print("Player Selection: {}".format(player_selection))
+      print("Computer Selection: {}".format(computer_selection))
+      
+      match = player_selection, computer_selection  #  converts the player's and computer's selection into a tuple to compare it to win list
+      
+      if player_selection == computer_selection:  #  if both selections (player and computer) are the same, a tie count is added to the dictionary
+        stats_count['ties'] += 1
+        print("\nResult: Both are {}! So that's a Tie!".format(player_selection))
+      elif match in win_list:  #  if the tuple is the same as the win_list, player wins and a player count is added to the dictionary
+        stats_count['player'] += 1
+        print("\nResult: The power of {} beats {}! You won!".format(player_selection, computer_selection))
+      else:  #  if none of the conditions above are true, computer wins and a computer count is added to the dictionary
+        stats_count['computer'] += 1
+        print("\nResult: The power of {} is stronger than {}! You lost!".format(computer_selection, player_selection))
+      print("-------  STATS  -------"
+            "\n YOU  | COMPUTER | DRAW"
+            "\n  {player}        {computer}        {ties}"
+            "\n-----------------------".format(**stats_count))
+      if stats_count['player'] == 5:  #  if player gets 5 points, he wins
+        print("The game is DONE! You won! Congratulations!")
+        exit()
+      elif stats_count['computer'] == 5:  #  if computer gets 5 points, he wins
+        print("The game is DONE! You lost against a perfectly designed AI! You're now in the wall of shame!")
+        exit()
+    elif player_selection == 'HELP':  #  if the user doesn't remember the rules, it will show them again
+      clrscr()
+      print(option_help)
+    elif player_selection == 'QUIT':  #  if the user wants to play another game, it will take him to main menu, stats are again
+      stats_count['player'] = 0
+      stats_count['computer'] = 0
+      stats_count['ties'] = 0
+      input("Let's try another game mode then. I hope you enjoyed! Please press ENTER to continue...")
+      clrscr()
+      break
+    elif player_selection == 'EXIT':  #  if the user wants to exit the game
+      print("Bye bye... YOU COWARD!")
+      exit()
+    else:
+      print("Invalid selection. Try again...")  #  if there's an invalid choice, the input will show again
 
 def restart():
-        print("Choose 1: - Magic 8 | 2 -  Random #  | 3 - MadLib | 4 - Rock, Paper, Scissors! | q - quit")
+        print("Choose 1: - Magic 8 | 2 -  MadLib | 3 - Rock, Paper, Scissors! | q - quit")
 
         choice = input()
         if choice == "1":
             Magic8Ball()
         elif choice == "2":
-            print("")
-            randnum()
-        elif choice == "3":
             madlibs_start()
-        elif choice == "4":
+        elif choice == "3":
             RPS()
         elif choice == "q":
+            print("Byeeeeeee")
             exit()
         else:
             quit
@@ -201,8 +262,8 @@ def main_code():
     print("Do you wnat to play a game? (yes/no)")
     print()
     answer = input()
-    if answer.lower() == "yes":
-        print("Choose 1: - Magic 8 | 2 -  Random #  | 3 - MadLib | 4 - Rock, Paper, Scissors! | q - quit")
+    if answer.lower() == "yes" or answer.lower() == "y":
+        print("Choose: 1 - Magic 8 | 2 -  MadLib | 3 - Rock, Paper, Scissors! | q - quit")
 
         choice = input()
         if choice == "1":
@@ -222,11 +283,8 @@ def main_code():
 
             Magic8Ball()
         elif choice == "2":
-            print("")
-            randnum()
-        elif choice == "3":
             madlibs_start()
-        elif choice == "4":
+        elif choice == "3":
             RPS()
         elif choice == "q":
             exit()
