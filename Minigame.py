@@ -44,12 +44,7 @@ def madlibs():
     print()
     restart()
 
-def madlibs2():
-   
-    restart()
-
-
-def madlib3():
+def madlib2():
     item=input("Enter an object: ")
     person=input("Enter a person: ")
     activity1=input("Enter an activity: ")
@@ -78,9 +73,7 @@ def madlibs_start():
         madlibs()
     elif story == '2':    
         madlibs2()
-    elif story=='3':
-        madlibs3() 
-    elif story == 'q' 
+    elif story == 'q':
         clrscr()
         restart()
     else:
@@ -171,24 +164,6 @@ def lets_play(option):
     selections_list = SELECTIONS_LIST_RPSLS  #  selections are assigned based on the game
     win_list = WIN_LIST_RPSLS  #  win list is assigned based on the game
   
-  elif option == '3':  #  if option 3 is selected, it will play Google + Apple + Microsoft + Samsung + Amazon + Nintendo + Sony game
-    intro = (" Welcome to Google + Apple + Microsoft + Samsung + Amazon + Nintendo + Sony game!")
-    option_help = ("\n This game is simple and goes as following:"
-          "\n *You can choose between: Google, Apple, Microsoft, Samsung, Amazon, Nintendo or Sony."
-          "\n\n You must take in consideration these facts:"
-          "\n *Google's shares are higher than Apple, Microsoft and Samsung."
-          "\n *Apple sells more phones than Microsoft, Samsung and Amazon."
-          "\n *Microsoft can buy Samsung, Amazon and Nintendo."
-          "\n *Samsung pays more money in advertising than Amazon, Nintendo and Sony."
-          "\n *Amazon sells Nintendo, Sony and Google stuff on its website."
-          "\n *Nintendo is older than Sony, Google and Apple."
-          "\n *Sony has made better video game systems than Google, Apple and Microsoft."
-          "\n\n Notes: *The first one that scores 5 points WINS the game!"
-          "\n        *If you forgot the rules, just type 'help'."
-          "\n        *If you want to go to main menu to try the other games, just type 'quit'."
-          "\n        *If you want to exit because you're afraid of loosing, just type 'exit' you coward!\n")
-    selections_list = SELECTIONS_LIST_COMPANIES  #  selections are assigned based on the game
-    win_list = WIN_LIST_COMPANIES  #  win list is assigned based on the game
       
   print(intro)  #  displays the intro information based on the option selected
   print(option_help)  # displays the help information based on the option selected
@@ -259,7 +234,7 @@ def restart():
     
 
 def main_code():
-    print("Do you wnat to play a game? (yes/no)")
+    print("Do you want to play a game? (yes/no)")
     print()
     answer = input()
     if answer.lower() == "yes" or answer.lower() == "y":
