@@ -1,5 +1,6 @@
-# Multi-app
-As our current circumstances I have found myself bored looking for things to do and games to play. For this project I wanted to create a mini game application. This application would include different applications like a Magic 8 Ball, a Madlib story time,  and other games if I can add them in time. The application will give the user an option to select what game to play. Once they select the game the code for the specific game will run until the user wants to quit or change games. 
+Mini Games!
+
+As our current circumstances I have found myself bored looking for things to do and games to play. For this project I wanted to create a mini game application. This application would include games like a Magic 8 Ball, a Madlib story time,  and other games if I can add them in time. The application will give the user an option to select what game to play. Once they select the game the code for the specific game will run until the user wants to quit or change games. 
 
 
 Magic 8 Ball from: https://github.com/viljow/magic8/blob/master/main.py 
